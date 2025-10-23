@@ -34,7 +34,7 @@ todoButton.addEventListener("click", async function () {
 todosButton.addEventListener("click", async function () {
   const todos = await getTodos();
 
-	ol.innerHTML = todos.map((todo, index, todos) => {
+	ol.innerHTML = todos.map(function (todo, index, todos) {
 	  const { userId, id: TodoId, title, completed } = todo;
     return `<li>userId: ${userId} | TodoId: ${TodoId} | title: ${title} |  completed: ${completed}</li> ${completed ? "✅" : "❌"}`;
   });
